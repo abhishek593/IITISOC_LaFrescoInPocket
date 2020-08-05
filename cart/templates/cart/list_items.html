@@ -1,0 +1,73 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+    <title>LaFresco - Items</title>
+    <style>
+    body {
+        padding-top: 150px;
+    }
+    .themed-container {
+      padding: 15px;
+      margin-bottom: 30px;
+      background-color: rgba(0, 123, 255, .15);
+      border: 1px solid rgba(0, 123, 255, .2);
+    }
+    </style>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+    {% if messages %}
+    <ul class="messages" style="list-style-type: none">
+        {% for message in messages %}
+            {% if message.tags == 'error' %}
+            <li style="color: red" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message | striptags }}</li>
+            {% elif message.tags == 'success' %}
+            <li style="color: darkgreen" {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message | striptags }}</li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if sections %}
+        {% for section in sections %}
+            <div class="themed-container">{{ section }}</div>
+
+            {% if section.item_set.all %}
+                <div class="row">
+                {% for section_item in section.item_set.all %}
+                    <div class="col-md-3">
+                      <div class="card mb-4 shadow-sm">
+                        <svg class="bd-placeholder-img card-img-top" width="100%" height="125" xmlns="http://www.w3.org/2000/svg"
+                             focusable="false" >
+                            <rect width="100%" height="100%" fill="#4287f5"></rect>
+                            <text x="30%" y="50%" font-size="25px" fill="#eceeef" dy=".3em">{{ section_item.item_name }}</text></svg>
+                        <div class="card-body">
+                            <p>Available Quantity - {{ section_item.available_quantity }}</p>
+                            <p>Price - {{ section_item.price }}</p>
+
+                            <form method="post" action="{% url 'cart:add_item' %}">{% csrf_token %}
+                                <div class="form-group">
+                                <input type="hidden" name="section_name" value="{{ section.section_name }}">
+                                <input type="hidden" name="item_name" value="{{ section_item.item_name }}">
+                                <div style="padding: 20px">
+                                    <input type="number" min="1" max="{{ section_item.available_quantity }}" class="form-control" name="quantity">
+                                </div>
+                                <div class="btn-group col-lg-12 text-center d-flex justify-content-between align-items-center">
+                                    <button type="submit" class="btn btn-lg btn-info">Add to Cart</button>
+                                </div>
+                                </div>
+                            </form>
+
+                        </div>
+                      </div>
+                    </div>
+
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <p>No items to show.</p>
+    {% endif %}
+        </div>
+{% endblock content %}

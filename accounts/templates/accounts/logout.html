@@ -1,0 +1,22 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+    <title>LaFresco - Logout</title>
+    <style>
+    body {
+        padding-top: 150px;
+    }
+    </style>
+{% endblock title %}
+
+{% block content %}
+    <div class="container">
+    {% if logged_out %}
+        <div>Successfully Logged out.</div>
+        <div><a href="{% url 'accounts:login' %}">Login again?</a></div>
+    {% else %}
+        <div>You are not logged in.</div>
+        <div><a href="{% url 'accounts:login' %}">Login now?</a></div>
+    {% endif %}
+    </div>
+{% endblock content %}

@@ -1,0 +1,67 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+    <title>LaFresco - My Orders</title>
+    <style>
+    body {
+        padding-top: 150px;
+    }
+    </style>
+{% endblock title %}
+
+{% block fonts %}
+    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+{% endblock fonts %}
+
+{% block content %}
+    <div class="container">
+    {% if orders %}
+    {% for order in orders %}
+        <div class="card">
+        <div class="card-header">
+            <table>
+                <tr>
+                    <th style="width: 200px">Order Placed</th>
+                    <th style="width: 100px">Total</th>
+                </tr>
+                <tr>
+                    <th>{{ order.timestamp }}</th>
+                    <th>{{ order.total }}</th>
+                </tr>
+            </table>
+        </div>
+        <div class="card-body">
+            <h3 style="padding: 20px;font-family: 'Delius', cursive;">{{ order.get_human_rep_of_status }}</h3>
+            <div class="row">
+            {% for cart_item in order.cart.items.all %}
+            <div class="col-md-3">
+              <div class="card mb-4 shadow-sm">
+                <svg class="bd-placeholder-img card-img-top" width="100%" height="125" xmlns="http://www.w3.org/2000/svg"
+                     focusable="false" >
+                    <rect width="100%" height="100%" fill="#4287f5"></rect>
+                    <text x="30%" y="50%" font-size="25px" fill="#eceeef" dy=".3em">{{ cart_item.item.item_name }}</text></svg>
+                <div class="card-body">
+                    <p>Quantity Purchased - {{ cart_item.quantity }}</p>
+                    <p>Price - {{ cart_item.item.price }}</p>
+                    <p>Total - {{ cart_item.get_price }}</p>
+                </div>
+              </div>
+            </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+    {% endfor %}
+    {% else %}
+        <div class="card">
+        <div class="card-header">
+            No Orders yet.
+        </div>
+        <div class="card-body">
+            You don't have any orders placed.
+            <a href="{% url 'cart:list_items' %}">Click here</a> to view items and add them in your cart.
+        </div>
+        </div>
+    {% endif %}
+    </div>
+{% endblock content %}

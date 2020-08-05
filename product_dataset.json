@@ -1,0 +1,220 @@
+[
+  {
+    "section": "Fruits",
+    "items": [
+      {
+        "item": "Apple",
+        "available_quantity": 100,
+        "price": 20
+      },
+      {
+        "item": "Avocado",
+        "available_quantity": 50,
+        "price": 30
+      },
+      {
+        "item": "Banana",
+        "available_quantity": 200,
+        "price": 5
+      },
+      {
+        "item": "Kiwi",
+        "available_quantity": 300,
+        "price": 20
+      },{
+        "item": "Lime",
+        "available_quantity": 110,
+        "price": 10
+      },
+      {
+        "item": "Lemon",
+        "available_quantity": 190,
+        "price": 4
+      },
+      {
+        "item": "Mango",
+        "available_quantity": 190,
+        "price": 10
+      },
+      {
+        "item": "Orange",
+        "available_quantity": 120,
+        "price": 10
+      },
+      {
+        "item": "Pomegranate",
+        "available_quantity": 300,
+        "price": 20
+      },
+      {
+        "item": "Pear",
+        "available_quantity": 200,
+        "price": 10
+      },
+      {
+        "item": "Pineapple",
+        "available_quantity": 100,
+        "price": 30
+      }
+    ]
+  },
+  {
+    "section": "Vegetables",
+    "items": [
+      {
+        "item": "Cabage",
+        "available_quantity": 100,
+        "price": 20
+      },
+      {
+        "item": "Raddish",
+        "available_quantity": 50,
+        "price": 20
+      },
+      {
+        "item": "Carrot",
+        "available_quantity": 200,
+        "price": 30
+      },
+      {
+        "item": "Cauliflower",
+        "available_quantity": 300,
+        "price": 40
+      },
+      {
+        "item": "Potato",
+        "available_quantity": 110,
+        "price": 40
+      },
+      {
+        "item": "Tomato",
+        "available_quantity": 190,
+        "price": 30
+      },
+      {
+        "item": "Cucumber",
+        "available_quantity": 190,
+        "price": 30
+      },
+      {
+        "item": "Beetroot",
+        "available_quantity": 120,
+        "price": 40
+      },
+      {
+        "item": "Brocolli",
+        "available_quantity": 300,
+        "price": 50
+      },
+      {
+        "item": "Lettuce",
+        "available_quantity": 200,
+        "price": 50
+      },
+      {
+        "item": "Spinach",
+        "available_quantity": 100,
+        "price": 30
+      }
+    ]
+  },
+  {
+    "section": "Ice Creams",
+    "items": [
+      {
+        "item": "Blueberry",
+        "available_quantity": 14,
+        "price": 30
+      },
+      {
+        "item": "Bourbon",
+        "available_quantity": 50,
+        "price": 40
+      },
+      {
+        "item": "Black Walnut",
+        "available_quantity": 200,
+        "price": 30
+      },
+      {
+        "item": "Banana",
+        "available_quantity": 300,
+        "price": 10
+      },{
+        "item": "Strawberry",
+        "available_quantity": 110,
+        "price": 50
+      },
+      {
+        "item": "Cake batter",
+        "available_quantity": 190,
+        "price": 40
+      },
+      {
+        "item": "Chocolate chip",
+        "available_quantity": 190,
+        "price": 30
+      },
+      {
+        "item": "Black Raspberry",
+        "available_quantity": 120,
+        "price": 50
+      },
+      {
+        "item": "Black Sabbath",
+        "available_quantity": 300,
+        "price": 50
+      }
+    ]
+  },
+  {
+    "section": "Soft Drinks",
+    "items": [
+      {
+        "item": "Coke",
+        "available_quantity": 100,
+        "price": 20
+      },
+      {
+        "item": "Pepsi",
+        "available_quantity": 50,
+        "price": 30
+      },
+      {
+        "item": "Sprite",
+        "available_quantity": 200,
+        "price": 40
+      },
+      {
+        "item": "Chocolate Milkshake",
+        "available_quantity": 300,
+        "price": 30
+      },
+      {
+        "item": "Milk",
+        "available_quantity": 110,
+        "price": 20
+      },
+      {
+        "item": "Strawberry Milkshake",
+        "available_quantity": 190,
+        "price": 50
+      },
+      {
+        "item": "Fanta",
+        "available_quantity": 190,
+        "price": 40
+      },
+      {
+        "item": "7UP",
+        "available_quantity": 120,
+        "price": 40
+      },
+      {
+        "item": "Mirinda",
+        "available_quantity": 300,
+        "price": 40
+      }
+    ]
+  }
+]

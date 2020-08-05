@@ -1,0 +1,102 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+    <title>LaFresco - Profile</title>
+    <style>
+    body {
+        padding-top: 150px;
+    }
+    </style>
+{% endblock title %}
+
+{% block fonts %}
+    <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+{% endblock fonts %}
+
+{% block content %}
+<div class="container">
+{% if user %}
+    <div class="card">
+        <div class="card-header">
+            <h3 style="font-family: 'Delius', cursive;">Profile</h3>
+            <a href="{% url 'accounts:password-change' %}"><button class="btn btn-danger">Change Password</button></a>
+        </div>
+        <div class="card-body">
+            <div class="col-md-8">
+                    <div class="row">
+                        <div class="col-lg-4">
+                      <h6 style="padding-top: 5px;font-family: 'Delius', cursive;">First Name</h6>
+                            </div>
+                        <div class="col-lg-8">
+                        <form method="post">{% csrf_token %}
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                <input class="form-control" name="first_name" value="{{ user.first_name }}">
+                                        </div>
+                                    <div class="col-lg-6">
+                                <button type="submit" class="btn btn-primary">Change First Name</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </form>
+                            </div>
+                        </div>
+                  <hr>
+                    <div class="row">
+                        <div class="col-lg-4">
+                      <h6 style="padding-top: 5px;font-family: 'Delius', cursive;">Last Name</h6>
+                            </div>
+                        <div class="col-lg-8">
+                        <form method="post">{% csrf_token %}
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                <input class="form-control" name="last_name" value="{{ user.last_name }}">
+                                        </div>
+                                    <div class="col-lg-6">
+                                <button  type="submit" class="btn btn-primary">Change Last Name</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </form>
+                            </div>
+                        </div>
+                  <hr>
+                    <div class="row">
+                        <div class="col-lg-4">
+                      <h6 style="padding-top: 5px;font-family: 'Delius', cursive;">Email</h6>
+                            </div>
+                        <div class="col-lg-8">
+                            <p>{{ user.email }}</p>
+                            </div>
+                        </div>
+                  <hr>
+                    <div class="row">
+                        <div class="col-lg-4">
+                      <h6 style="padding-top: 5px;font-family: 'Delius', cursive;">Date of Birth</h6>
+                            </div>
+                        <div class="col-lg-8">
+                        <form method="post">{% csrf_token %}
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                <input class="form-control" name="date_of_birth" value="{{ user.date_of_birth | date:"SHORT_DATE_FORMAT"}}">
+                                        </div>
+                                    <div class="col-lg-6">
+                                <button  type="submit" class="btn btn-primary">Change Date Of Birth</button>
+                                        </div>
+                                </div>
+                            </div>
+                        </form>
+                            </div>
+                        </div>
+                  <hr>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <p>Please login or create an account to view profile.</p>
+{% endif %}
+</div>
+{% endblock content %}

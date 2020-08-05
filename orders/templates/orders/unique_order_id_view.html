@@ -1,0 +1,29 @@
+{% extends 'home_page.html' %}
+
+{% block title %}
+    {% load static %}
+    <title>LaFresco - Order Placedr</title>
+
+{% endblock title %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'orders/css/bootstrap.min.css' %}">
+{% endblock css %}
+{% block fonts %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+{% endblock fonts %}
+
+{% block content %}
+    <header class="masthead" style="background-image:url({% static 'orders/img/intro-bg.jpg'%});">
+        <div class="intro-body">
+            <div class="container">
+                    <div class="col-lg-8 mx-auto">
+                        <h1>Order Confirmed.</h1>
+                        <p>We have received your order.
+                    Here is the ORDER_ID {{ order_id }}.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+{% endblock content %}
