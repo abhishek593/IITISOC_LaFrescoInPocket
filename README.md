@@ -8,7 +8,7 @@ In this way the number of contacts will be reduced and social distancing will be
 ---
 
 ### Technologies Used
-Django
+Django  
 Python 
 ### Install Requirements
 First, create a python virtual environment. Then install requirements as-
