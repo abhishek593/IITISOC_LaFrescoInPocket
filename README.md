@@ -7,6 +7,9 @@ A website that has the following features:
 In this way the number of contacts will be reduced and social distancing will be maintained.
 ---
 
+### Technologies Used
+Django
+Python 
 ### Install Requirements
 First, create a python virtual environment. Then install requirements as-
 ```
